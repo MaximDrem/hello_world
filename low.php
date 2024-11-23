@@ -53,6 +53,10 @@ if (isset($_GET['Submit'])) {
                 exit;
             }
             break;
+        default:
+            http_response_code(500);
+            echo '<pre>Error: Unsupported database type specified in configuration.</pre>';
+            exit;
     }
 
     if ($exists) {
